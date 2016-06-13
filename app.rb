@@ -17,6 +17,11 @@ class User < ActiveRecord::Base
 
 end
 
+class Product < ActiveRecord::Base
+  validates_presence_of :name, :price
+
+end
+
 get "/" do
   erb :index
 end
