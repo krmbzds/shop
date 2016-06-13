@@ -24,6 +24,11 @@ end
 
 class Cart < ActiveRecord::Base; end
 
+class CartItem < ActiveRecord::Base
+  validates_presence_of :quantity
+  
+end
+
 
 get "/" do
   erb :index
