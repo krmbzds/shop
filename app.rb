@@ -12,6 +12,11 @@ require "sinatra/reloader" if development?
 use Rack::Session::Cookie, :secret => "TODO: CHANGE ME"
 use Rack::Csrf, :raise => true
 
+class User < ActiveRecord::Base
+  validates_presence_of :name, :email, :password
+
+end
+
 get "/" do
   erb :index
 end
