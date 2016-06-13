@@ -23,12 +23,13 @@ class Cart < ActiveRecord::Base
 end
 
 class Product < ActiveRecord::Base
+  has_many :cart_items
   validates_presence_of :name, :price
 end
 
 class CartItem < ActiveRecord::Base
   belongs_to :cart
-  has_one :product
+  belongs_to :product
   validates_presence_of :quantity
 end
 

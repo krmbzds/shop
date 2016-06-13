@@ -1,21 +1,21 @@
-user = User.new(
+user = User.create(
   username: 'john',
   email: 'john@exmaple.com',
-  password: 'password')
+  password: 'password'
+)
 
-product = Product.new(
+
+product = Product.create(
   name: 'Nexus 4',
   price: '299'
 )
 
-cart = Cart.new(
-  user_id: user.id
+cart = Cart.create(
+  user: user
 )
 
-cart_item = CartItem.new(
-  cart_id: cart.id,
-  product_id: product.id,
+cart_item = CartItem.create(
+  cart: cart,
+  product: product,
   quantity: 1
 )
-
-[user, product, cart, cart_item].each { |t| t.save! }
