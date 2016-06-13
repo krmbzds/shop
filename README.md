@@ -15,12 +15,10 @@ $ rackup
 
 ```
 .
-├── Gemfile
-├── Gemfile.lock
-├── README.md
-├── Rakefile
-├── app.rb
-├── config.ru
+├── config
+│   └── database.yml
+├── db
+│   └── migrate
 ├── public
 │   ├── css
 │   ├── img
@@ -28,8 +26,11 @@ $ rackup
 ├── test
 │   ├── integration
 │   ├── support
+│   ├── test_helper.rb
 │   └── unit
-└── views
+├── views
+├── app.rb
+└── config.ru
 ```
 
 ## Notes / Use
