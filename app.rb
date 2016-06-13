@@ -22,6 +22,9 @@ class Product < ActiveRecord::Base
 
 end
 
+class Cart < ActiveRecord::Base; end
+
+
 get "/" do
   erb :index
 end
