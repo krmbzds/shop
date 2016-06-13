@@ -1,6 +1,7 @@
 require "bundler/setup"
 require "sinatra"
 require "rack/csrf"
+require "sinatra/activerecord"
 
 Dir.glob(File.join("helpers", "**", "*.rb")).each do |helper|
   require_relative helper

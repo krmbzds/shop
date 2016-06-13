@@ -1,4 +1,5 @@
 require "rake/testtask"
+require "sinatra/activerecord/rake"
 
 task :default => "test:all"
 
@@ -25,4 +26,10 @@ namespace :test do
 
   desc "Run all tests"
   task :all => %w[test:unit test:integration]
+end
+
+namespace :db do
+  task :load_config do
+    require "./app"
+  end
 end
