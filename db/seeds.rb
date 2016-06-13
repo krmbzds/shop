@@ -4,10 +4,14 @@ user = User.create(
   password: 'password'
 )
 
-
 product = Product.create(
   name: 'Nexus 4',
   price: '299'
+)
+
+product2 = Product.create(
+  name: 'Nexus 5',
+  price: '399'
 )
 
 cart = Cart.create(
