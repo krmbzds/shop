@@ -17,6 +17,7 @@ end
 group :test do
   gem 'contest', '~> 0.1.3'
   gem 'test-unit', '~> 3.1', '>= 3.1.9'
+  gem 'minitest', '~> 5.1'
 end
 
 group :development, :test do
