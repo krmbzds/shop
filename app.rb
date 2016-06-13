@@ -12,26 +12,7 @@ require "sinatra/reloader" if development?
 use Rack::Session::Cookie, :secret => "TODO: CHANGE ME"
 use Rack::Csrf, :raise => true
 
-class User < ActiveRecord::Base
-  has_many :carts
-  validates_presence_of :username, :email, :password
-end
-
-class Cart < ActiveRecord::Base
-  belongs_to :user
-  has_many :cart_items
-end
-
-class Product < ActiveRecord::Base
-  has_many :cart_items
-  validates_presence_of :name, :price
-end
-
-class CartItem < ActiveRecord::Base
-  belongs_to :cart
-  belongs_to :product
-  validates_presence_of :quantity
-end
+Dir["./models/*.rb"].each {|file| require file }
 
 get "/" do
   erb :index
