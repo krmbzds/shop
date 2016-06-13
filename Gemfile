@@ -12,6 +12,8 @@ group :development do
   gem 'rake', '~> 11.2', '>= 11.2.2'
   gem 'sinatra-reloader', '~> 1.0'
   gem 'dotenv', '~> 2.1', '>= 2.1.1'
+  gem 'pry', '~> 0.10.3'
+  gem 'pry-coolline', '~> 0.2.5'
 end
 
 group :test do

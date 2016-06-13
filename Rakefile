@@ -13,6 +13,12 @@ task :server do
   exec("bundle exec thin start -p #{port} -e #{rack_env}")
 end
 
+desc "Run IRB console"
+task :console, :environment do |t, args|
+  ENV['RACK_ENV'] = args[:environment] || 'development'
+  exec "pry -r ./app"
+end
+
 namespace :test do
   Rake::TestTask.new(:unit) do |t|
     t.libs << 'test/unit'
